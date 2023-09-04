@@ -177,6 +177,7 @@ body {
     display: flex;
     overflow: hidden;
     height: calc(100vh - 80px);
+    scroll-behavior: smooth;
 }
 
 .container-productos {
@@ -226,8 +227,111 @@ body {
     transform: scale(1.15);
 }
 
+/* SECCION SERVICIOS */
+#servicios {
+    height: 100vh;
+    background: #FFF;
+    padding: 40px;
+}
 
+.servicios-titulos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+.servicios-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 30px;
+    grid-template-areas: "ingredientes imagen rapidez"
+                         "calidad imagen delivery";
+}
+
+.calidad {
+    grid-row: calidad;
+    grid-column: calidad;
+}
+
+.ingredientes {
+    grid-row: ingredientes;
+    grid-column: ingredientes;
+}
+
+.rapidez {
+    grid-row: rapidez;
+    grid-column: rapidez;
+}
+
+.delivery {
+    grid-row: delivery;
+    grid-column: delivery;
+}
+
+.imagen-central {
+    grid-row: imagen;
+    grid-column: imagen;
+    transition: all 0.5s;
+    /* AGREGADO MIO */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-central:hover {
+    transform: scale(1.1);
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.items span {
+    width: 95px;
+    font-size: 40px;
+    color: var(--color-secundario);
+    padding: 20px;
+    border: 5px double #dedede;
+    border-radius: 50%;
+    transform: all 0.5s;
+}
+
+.items span:hover {
+    background: var(--color-secundario);
+    color: #FFF;
+}
+
+.ingredientes span,
+.calidad span {
+    color: var(--color-primario);
+}
+
+.ingredientes span:hover,
+.calidad span:hover {
+    background: var(--color-primario);
+    color: #FFF;
+}
+
+.items .titulo-item {
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.items .texto-item {
+    font-size: 14px;
+    color: var(--color-texto);
+    text-align: center;
+    font-style: italic;
+    padding: 20px;
+}
 
 
 
@@ -255,6 +359,17 @@ body {
     /* DESDE ESTE PUNTO LA IMAGEN CRECE 70% */
     .imagen-productos {
         width: 70%;
+    }
+
+    /* SECCION SERVICIOS */
+    .servicios-container {
+        margin-top: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "ingredientes rapidez"
+                             "calidad delivery";
+    }
+    .imagen-central {
+        display: none;
     }
 }
 
