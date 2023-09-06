@@ -16,6 +16,10 @@
     font-family: var(--text-default);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--color-background);
 }
@@ -232,6 +236,9 @@ body {
     height: 100vh;
     background: #FFF;
     padding: 40px;
+    /* APLICADO POR MI */
+    display: grid;
+    grid-template-rows: 20% 80%;
 }
 
 .servicios-titulos {
@@ -279,10 +286,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: scale(1.3);
 }
 
 .imagen-central:hover {
-    transform: scale(1.1);
+    transform: scale(1.4);
 }
 
 .items {
@@ -419,6 +427,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* width: 100%;
+    max-width: 1400px;
+    margin: 0 auto; */
 }
 
 .ingre {
@@ -431,9 +442,9 @@ body {
 .imagen-ingre {
     position: absolute;
     height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    /* width: 100%; */
+    /* left: 50%;
+    transform: translateX(-50%); */
+    width: 100%;
 }
 
 .info-ingre {
@@ -463,8 +474,267 @@ body {
     transform: translateY(10px);
 }
 
+/* SECCION CONTACTO */
+#contacto {
+    height: 100vh;
+    padding: 60px;
+    position: relative;
+}
+
+#formulario {
+    width: 70%;
+    margin: 50px auto;
+}
+
+.two-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-text, .input-email, .textarea {
+    border: 1px solid #b4b4b4;
+    color: #888;
+    background: #FFF;
+    outline: none;
+    padding: 15px 60px;
+    height: 45px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: all 0.5s;
+}
+
+.textarea {
+    width: 100%;
+    height: 150px;
+    resize: none;
+}
+
+.input-text, .input-email {
+    width: 100%;
+}
+
+.inputConIcon {
+    position: relative;
+    width: 48%;
+}
+
+.inputConIcon i {
+    position: absolute;
+    left: 0;
+    padding: 14px 15px;
+    background: #888;
+    color: #FFF;
+    transition: all 0.5s;
+}
+
+.textareaIcon {
+    width: 100%;
+}
+
+.textareaIcon i {
+    background: transparent;
+    color: #888;
+    padding: 0;
+    font-size: 25px;
+    left: 17px;
+    top: 13px;
+    transition: all 0.5s;
+}
+
+.inputConIcon input:focus,
+.inputConIcon textarea:focus {
+    border: 1px solid var(--color-primario);
+}
+
+.inputConIcon input:focus + i {
+    background: var(--color-primario);
+}
+
+.inputConIcon textarea:focus + i {
+    color: var(--color-primario);
+}
+
+.fields-btn {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.btn-input {
+    padding: 15px 50px;
+}
+
+.btn-input:hover {
+    padding: 15px 65px;
+}
+
+/* ALERTAS */
+.alertas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    width: 60%;
+    padding: 20px 60px;
+    position: fixed;
+    top: 0;
+    transition: all 0.5s;
+}
+
+.alert.show {
+    transform: translateY(50%);
+}
+
+.alert.hide {
+    transform: translateY(-100%);
+}
+
+.alert .icono-alert {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+}
+
+.alert .msg {
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+#alertError {
+    background: #f8d7da;
+    border-right: 4px solid #da3748;
+}
+
+#alertError .icono-alert {
+    color: #da3748;
+}
+
+#alertError .msg {
+    color: #721c24;
+}
+
+#alertSuccess {
+    background: #d4edda;
+    border-right: 4px solid #279e43;
+}
+
+#alertSuccess .icono-alert {
+    color: #279e43;
+}
+
+#alertSuccess .msg {
+    color: #155724;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    margin-top: -100px;
+}
+
+.sociales-metodo {
+    width: 25%;
+    height: 100px;
+    background: #333;
+    color: #FFF;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.sociales-metodo i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    line-height: 100px;
+    transition: all 0.5s;
+}
+
+.sociales-metodo span {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 10px 0;
+    font-size: 12px;
+    background: var(--color-primario);
+    color: #FFF;
+    letter-spacing: 1px;
+    font-weight: 700;
+    transform: translateY(60px);
+    transition: all 0.5s;
+}
+
+.sociales-metodo i:hover + span {
+    transform: translateY(0px);
+}
+
+.sociales-metodo i:hover {
+    transform: translateY(-20px);
+}
+
+/* BOTON DE IR ARRIBA */
+#btn-top {
+    width: 50px;
+    height: 50px;
+    background: var(--color-primario);
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transform: translateY(200%);
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+#btn-top.show {
+    transform: translateY(0);
+}
+
+#btn-top.scrollFinal {
+    transform: translateY(-250%);
+}
+
+#btn-top span {
+    color: #FFF;
+    font-size: 25px;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.5s;
+}
+
+#btn-top:hover {
+    background: #d89127;
+}
+
+#btn-top:hover span {
+    transform: translateY(-3px);
+}
 
 /* MEDIA QUERYS */
+@media screen and (max-width: 1400px) {
+    /* APLICADO POR MI */
+    .imagen-ingre {
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+    }
+    .imagen-central {
+        transform: scale(1);
+    }
+    .imagen-central:hover {
+        transform: scale(1.1);
+    }
+}
+
 @media screen and (max-width: 850px) {
     /* SLIDER PRODUCTOS */
     .container-productos {
@@ -570,6 +840,39 @@ body {
 
     /* INGREDIENTES */
     .info-ingre .txt-ingre {
+        display: none;
+    }
+
+    /* CONTACTOS */
+    #formulario {
+        width: 100%;
+    }
+    .two-fields {
+        flex-direction: column;
+    }
+    .inputConIcon {
+        width: 100%;
+    }
+
+    /* ALERTAS */
+    .alert {
+        width: 100%;
+    }
+    .alert.show {
+        transform: translateY(150%);
+    }
+
+    /* FOOTER */
+    footer {
+        flex-wrap: wrap;
+        margin-top: 0px;
+    }
+    .sociales-metodo {
+        width: 50%;
+    }
+
+    /* BOTON DE IR ARRIBA */
+    #btn-top {
         display: none;
     }
 }
